@@ -24,6 +24,6 @@
 + (instancetype)itemViewWithItem:(QBPopupMenuItem *)item;
 - (instancetype)initWithItem:(QBPopupMenuItem *)item;
 
-- (void)performAction;
+- (void)performAction:(UIButton *)sender;
 
 @end

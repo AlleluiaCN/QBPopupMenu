@@ -8,20 +8,21 @@
 
 #import <Foundation/Foundation.h>
 
-@interface QBPopupMenuItem : NSObject
+@interface QBPopupMenuItem : UIButton
 
 @property (nonatomic, weak, readonly) id target;
 @property (nonatomic, assign, readonly) SEL action;
 
+@property (nonatomic, assign, readonly) NSInteger flag;
 @property (nonatomic, copy, readonly) NSString *title;
 @property (nonatomic, copy, readonly) UIImage *image;
 
-+ (instancetype)itemWithTitle:(NSString *)title target:(id)target action:(SEL)action;
-+ (instancetype)itemWithImage:(UIImage *)image target:(id)target action:(SEL)action;
-+ (instancetype)itemWithTitle:(NSString *)title image:(UIImage *)image target:(id)target action:(SEL)action;
++ (instancetype)itemWithTitle:(NSString *)title target:(id)target flag:(NSInteger)flag action:(SEL)action;
++ (instancetype)itemWithImage:(UIImage *)image target:(id)target flag:(NSInteger)flag action:(SEL)action;
++ (instancetype)itemWithTitle:(NSString *)title image:(UIImage *)image target:(id)target flag:(NSInteger)flag action:(SEL)action;
 
-- (instancetype)initWithTitle:(NSString *)title target:(id)target action:(SEL)action;
-- (instancetype)initWithImage:(UIImage *)image target:(id)target action:(SEL)action;
-- (instancetype)initWithTitle:(NSString *)title image:(UIImage *)image target:(id)target action:(SEL)action;
+- (instancetype)initWithTitle:(NSString *)title target:(id)target flag:(NSInteger)flag action:(SEL)action;
+- (instancetype)initWithImage:(UIImage *)image target:(id)target flag:(NSInteger)flag action:(SEL)action;
+- (instancetype)initWithTitle:(NSString *)title image:(UIImage *)image target:(id)target flag:(NSInteger)flag action:(SEL)action;
 
 @end

@@ -37,9 +37,10 @@
         // Create button
         self.button = ({
             UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+            button.tag = item.flag;
             button.frame = self.bounds;
             button.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-            [button addTarget:self action:@selector(performAction) forControlEvents:UIControlEventTouchUpInside];
+            [button addTarget:self action:@selector(performAction:) forControlEvents:UIControlEventTouchUpInside];
             
             // Set style
             button.contentMode = UIViewContentModeScaleAspectFit;
@@ -93,10 +94,10 @@
 
 #pragma mark - Actions
 
-- (void)performAction
+- (void)performAction:(UIButton *)sender
 {
     if (self.item.target && self.item.action) {
-        [self.item.target performSelector:self.item.action withObject:nil afterDelay:0];
+        [self.item.target performSelector:self.item.action withObject:sender afterDelay:0];
     }
     
     // Close popup menu
