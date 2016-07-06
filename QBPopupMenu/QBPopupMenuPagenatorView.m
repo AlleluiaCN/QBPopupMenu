@@ -52,7 +52,7 @@
 
 #pragma mark - Actions
 
-- (void)performAction
+- (void)performAction:(UIButton *)sender
 {
     if (self.target && self.action) {
         [self.target performSelector:self.action withObject:nil afterDelay:0];
